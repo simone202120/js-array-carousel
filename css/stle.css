@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-img{
+    padding:50px;
+    height: 500px;
+    position: relative;
+}
+
+.img{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+}
+
+.immagine{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.style{
+    height: 30px;
+    width: 30px;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    position:absolute;
+}
+
+.up{
+    top:60px;
+    left: 50%;
+}
+.down{
+    bottom:60px;
+    left: 50%;
+}
+   
+   
+
