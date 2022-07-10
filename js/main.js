@@ -1,20 +1,49 @@
-const immagini = [ "img/01.jpg",
+const imagesArray = [ "img/01.jpg",
                    "img/02.jpg",
                    "img/03.jpg",
                    "img/04.jpg",
                    "img/05.jpg",
                 ];
 
-let img = document.querySelector (".img");
-let imgarray = document.querySelectorAll('.img');
-let imgselez="";
+let itemsDom = document.querySelector (".items");
+let slideAttiva= 0;
 
-for(i = 0; i< immagini.length; i++){
-    img.innerHTML +=  ` <div class="img">
-                        <img class="img" src="${immagini[i]}">
+for(let i = 0; i< imagesArray.length; i++){
+    itemsDom .innerHTML +=  ` <div class="item">
+                        <img class="img-slide" src="${imagesArray[i]}">
                         </div> `;
 }
 
-imgarray[imgselez].classList.Add(".show")
-let up = document.querySelector("up");
-let down = document.querySelector("down");
+const itemList = document.getElementsByClassName("item");
+itemList [slideAttiva].classList.add("show");
+
+const up= document.querySelector(".up");
+up.addEventListener ("click",
+function() {
+
+    itemList[slideAttiva].classList.remove("show");
+    slideAttiva++;
+    itemList[slideAttiva].classList.add("show");
+    down.classList.remove("hidden"); 
+
+    if(slideAttiva ==itemList.length -1 )
+        up.classList.add("hidden");
+    }
+)
+
+const down= document.querySelector(".down");
+down.addEventListener ("click",
+function() {
+
+    itemList[slideAttiva].classList.remove("show");
+    slideAttiva--;
+    itemList[slideAttiva].classList.add("show");
+
+    up.classList.remove("hidden"); 
+
+    if(slideAttiva ==0)
+        down.classList.add("hidden");
+
+    }
+
+)
